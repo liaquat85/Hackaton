@@ -3,11 +3,15 @@ import operator
 
 sample1 = open("TED_talk_small.csv",'r')
 csv1= csv.reader(sample1,delimiter=',')
+next(csv1)
+#ID_sorted = sorted(csv1, key=lambda x: int(x[0]))
+#for eachline in ID_sorted:
+#    print(eachline)
 
 #in the itemgetter you have to write the colum number for sorting
-sort=sorted(csv1,key=operator.itemgetter(2),reverse=True)
-for eachline in sort:
-    print(eachline)
+sortedlist = sorted(csv1, key=lambda row: row[1], reverse=False)
+#for eachline in sortedlist:
+#    print(eachline)
 
 
 ID = []
@@ -27,14 +31,14 @@ with open('TED_talk_small.csv') as csvfile:
         tags.append(tags1)
         views.append(views1)
 
-  #  whatID= input('Enter the ID of speaker to know its name and tags and number of views ? ')
-  #  IDdex=ID.index(whatID)
- ##   thespeaker=speaker[IDdex]
-  #theviews=views[IDdex]
-   # thetags=tags[IDdex]
- #   print("For ID",whatID,"the speaker is",thespeaker,"and number of views is",theviews,"and tags are",thetags)
-
-
-
+    #whatID= input('Enter the name to find its video? ')
+    #speakerdex=speaker.index(whatID)
+    #theID=ID[speakerdex]
+    ##theviews=views[speakerdex]
+    #thetags=tags[speakerdex]
+    #print("For speaker",whatID,"the ID is",theID,"and number of views is",theviews,"and tags are",thetags)
+ID1=int(ID1)+1
+ID.append(str(ID1))
+print(ID)
 
 
